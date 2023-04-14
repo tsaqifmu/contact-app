@@ -1,16 +1,15 @@
-import { existsSync } from "node:fs";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import * as fs from "node:fs/promises";
 import { rl } from "./index.js";
 
 // make data folder
-export const dirPath = "./data";
+const dirPath = "./data";
 if (!existsSync(dirPath)) {
   fs.mkdir(dirPath);
 }
 
 // make contacs.json if not already there
-export const dataPath = "./data/contacts.json";
+const dataPath = "./data/contacts.json";
 if (!existsSync(dataPath)) {
   fs.writeFile(dataPath, "[]", "utf-8");
 }
